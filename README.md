@@ -8,6 +8,22 @@
     <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="My Personal Website" height="30" width="30">
   </a>
 
+  ```js
+const Discord = require('discord.js')
+const client = new Discord.Client()
+
+// login
+client.login('token')
+console.log('Bot Succesfully Logged In!')
+
+// first command
+client.on('message', (message) => {
+    if (message.content.startsWith('!info')) {
+    message.channel.send('Hello! My name is Moto I write some code (never good) and steal a lot of it my friend who made this is Jarynnnn check him out!')
+    
+    }
+    }
+```
   
 </p>
 
