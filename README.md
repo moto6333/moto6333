@@ -8,21 +8,28 @@
     <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="My Personal Website" height="30" width="30">
   </a>
 
-  ```js
-const Discord = require('discord.js')
-const client = new Discord.Client()
+  ```java
+package motosgithub;
 
-// login
-client.login('token')
-console.log('Bot Succesfully Logged In!')
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.plugin.java.JavaPlugin;
 
-// first command
-client.on('message', (message) => {
-    if (message.content.startsWith('!info')) {
-    message.channel.send('Hello! My name is Moto I write some code (never good) and steal a lot of it my friend who made this is Jarynnnn check him out!')
-    
-    }
-    }
+public class Main extends JavaPlugin implements Listener {
+	@EventHandler
+	public void onPlayerChat(AsyncPlayerChatEvent e) {
+		Player p = e.getPlayer();
+		if (e.getMessage().contains("info")) {
+			e.setCancelled(true);
+			p.sendMessage(ChatColor.DARK_RED + "Hello! My name is Moto I write some code mostly java I know some other stuff tho");
+		    p.sendMessage(ChatColor.DARK_RED + " Java , JS, PHP");
+		}
+
+	}
+}
 ```
   
 </p>
